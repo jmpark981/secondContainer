@@ -53,10 +53,12 @@
     <body>
         <div class=container>
             <h1>
-                HI
+                User DB 출력
             </h1>
-            {{email, age, sex, college_of, how_eat}}
-            
+            {% for one_user in show_users %}
+                {{one_user.email, one_user.age, one_user.sex, one_user.college_of, one_user.how_eat}}
+            <br>
+            {% endfor %}
         </div> 
         
         

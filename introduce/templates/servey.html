@@ -55,19 +55,24 @@
         <div class="container mt-5">
             <form method="POST" action="/servey" >
                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
-
+                <!--이메일 중복 시 오류 메세지-->
+                <h3>{{ error_msg }}</h3>
+                <br>
+                
                 <!--이메일-->
                 <p>
                     {{ form.email.label(class="form-label") }}
                     <br>
                     {{ form.email(class="form-control") }}
                 </p>
+                
                 <!--나이-->
                 <p>
                     {{ form.age.label(class="form-label") }}
                     <br>
                     {{ form.age(class="form-control") }}
                 </p>
+                
                 <!--성별-->
                 <p>
                     {{ form.sex.label(class="form-label") }}
@@ -101,7 +106,8 @@
                     </tr>
                     {% endfor %}
                 </p>
-
+                
+                <!--제출-->
                 <br>
                 {{ form.submit(class="btn btn-primary") }}
 
