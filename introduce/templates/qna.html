@@ -54,11 +54,18 @@
         <div class=container>
             <h1>
                 User DB 출력
-            </h1>
-            {% for one_user in show_users %}
-                {{one_user.email, one_user.age, one_user.sex, one_user.college_of, one_user.how_eat}}
-            <br>
-            {% endfor %}
+            </h1> 
+            <p>
+                {% for one_user in show_users %}
+                    {% for category in ['email', 'age', 'sex', 'college_of', 'newbie_in', 'diff_college_of', 'personality', 'weekend_stay', 
+            'weekday_stay', 'smoke', 'alcohol', 'how_eat', 'how_eat_in', 'wake_up', 'sleep', 'stay_overnight_test',
+            'sleep_habit', 'clean_period', 'shower_time', 'shower_timezone', 'material_share', 'bug_catch', 
+            'phone_chat_in', 'phone_chat_time', 'age_range'] %}
+                        {{one_user[category]}}
+                    {% endfor %}
+                <br>
+                {% endfor %}
+            </p>
         </div> 
         
         

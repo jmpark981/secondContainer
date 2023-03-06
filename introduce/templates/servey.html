@@ -93,6 +93,53 @@
                     <br>
                     {{ form.college_of() }}
                 </p>
+                
+                <!--신규 입주생 ~ 성격-->
+                
+                {% for category in ['newbie_in', 'diff_college_of', 'personality', 'weekend_stay'] %}
+                <p>
+                    {{ form[category].label(class="form-label") }}
+                    <br>
+
+                    {% for subfield in form[category] %}
+                    <tr>
+                        <td>{{ subfield }}</td>
+                        <td>{{ subfield.label }}</td>
+                    </tr>
+                    {% endfor %}
+
+                </p>
+                {% endfor %}
+               
+                <!--평일 거주 시간-->
+                <p>
+                    {{ form.weekday_stay.label }}
+                    <br>
+
+                    {% for subfield in form.weekday_stay %}
+                    <tr>
+                        <td>{{ subfield }}</td>
+                        <td>{{ subfield.label }}</td>
+                    </tr>
+                    {% endfor %}
+                </p>
+                
+                <!--담배, 술-->
+                
+                {% for category in ['smoke', 'alcohol'] %}
+                <p>
+                    {{ form[category].label(class="form-label") }}
+                    <br>
+
+                    {% for subfield in form[category] %}
+                    <tr>
+                        <td>{{ subfield }}</td>
+                        <td>{{ subfield.label }}</td>
+                    </tr>
+                    {% endfor %}
+
+                </p>
+                {% endfor %}
 
                 <!--식사 해결-->
                 <p>
@@ -106,6 +153,24 @@
                     </tr>
                     {% endfor %}
                 </p>
+            
+                <!--식사 해결 ~ 끝-->
+                
+                {% for category2 in ['how_eat_in', 'wake_up', 'sleep', 'stay_overnight_test', 'sleep_habit', 'clean_period', 'shower_time', 
+                'shower_timezone', 'material_share', 'bug_catch', 'phone_chat_in', 'phone_chat_time', 'age_range'] %}
+                <p>
+                    {{ form[category2].label(class="form-label") }}
+                    <br>
+
+                    {% for subfield in form[category2] %}
+                    <tr>
+                        <td>{{ subfield }}</td>
+                        <td>{{ subfield.label }}</td>
+                    </tr>
+                    {% endfor %}
+
+                </p>
+                {% endfor %}
                 
                 <!--제출-->
                 <br>
