@@ -1,7 +1,7 @@
 import pymysql
 
 #MySQL 접속
-my_db=pymysql.connect(host='localhost', user='joonmo', passwd='os2window', db='users', charset='utf8')
+my_db=pymysql.connect(host='localhost', user='xxxxx', passwd='xxxxxx', db='users', charset='utf8')
 print(my_db)
 
 #userDB 이용
