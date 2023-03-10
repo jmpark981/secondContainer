@@ -12,7 +12,7 @@ app = Flask(__name__)      # 서버 생성
 csrf = CSRFProtect(app)    # form이 제대로 전송되었는지 확인
 
 #데이터 베이스 추가
-app.config['SQLALCHEMY_DATABASE_URI']="mysql+pymysql://joonmo:os2window@localhost/users"
+app.config['SQLALCHEMY_DATABASE_URI']="mysql+pymysql://xxxxx:xxxxxxx@localhost/users"
 
 #폼 비밀키 설정
 app.config['SECRET_KEY']="my super secret key"
