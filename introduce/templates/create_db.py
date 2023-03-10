@@ -1,6 +1,6 @@
 import pymysql
 
-mydb=pymysql.connect(host="127.0.0.1", user="joonmo", password="os2window", charset="utf8")
+mydb=pymysql.connect(host="127.0.0.1", user="xxxx", password="xxxxxx", charset="utf8")
 
 print(mydb)
 
