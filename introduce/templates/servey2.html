@@ -53,65 +53,34 @@
     
     <main>
         <div class="container mt-5">
-            <form method="POST" action="/servey" >
+            <form method="POST" action="/servey2" >
                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
                 <!--이메일 중복 시 오류 메세지-->
                 <h3>{{ error_msg }}</h3>
                 <br>
+                <h1>
+                    이 페이지는 룸메에 관한 정보를 담는 페이지 입니다.
+                </h1><br>
                 
-                <!--이메일-->
+                <!--원하는 나이대-->
                 <p>
-                    {{ form.email.label(class="form-label") }}
-                    <br>
-                    {{ form.email(class="form-control") }}
-                </p>
-                
-                <!--성별-->
-                <p>
-                    {{ form.sex.label(class="form-label") }}
+                    {{ form.age_range.label }}
                     <br>
 
-                    {% for subfield in form.sex %}
+                    {% for subfield in form.age_range %}
                     <tr>
                         <td>{{ subfield }}</td>
                         <td>{{ subfield.label }}</td>
                     </tr>
                     {% endfor %}
-
                 </p>
                 
-                <!--나이-->
-                <p>
-                    {{ form.age.label(class="form-label") }}
-                    <br>
-                    {{ form.age(class="form-control") }}
-                </p>
-                
-                <!--레이크홀 여부-->
-                <p>
-                    {{ form.dorm_select.label(class="form-label") }}
-                    <br>
 
-                    {% for subfield in form.dorm_select %}
-                    <tr>
-                        <td>{{ subfield }}</td>
-                        <td>{{ subfield.label }}</td>
-                    </tr>
-                    {% endfor %}
-
-                </p>
-
-                <!--단과대-->
-                <p>
-                    {{ form.college_of.label(class="form-label") }}
-                    <br>
-                    {{ form.college_of() }}
-                </p>
                 
-                <!--성격 ~ 샤워 시간대-->
+                <!--원하는 나이대 ~ 성격-->
                 
-                {% for category in ['personality', 'weekend_stay', 'weekday_stay', 'smoke', 'alcohol', 'how_eat', 'how_eat_in', 
-                'wake_up', 'sleep', 'sleep_sensitive', 'sleep_habit', 'clean_period', 'shower_timezone'] %}
+                {% for category in ['diff_college_of', 'personality', 'weekend_stay', 'weekday_stay', 'smoke', 'alcohol', 'how_eat', 
+                'how_eat_in', 'wake_up', 'sleep', 'sleep_sensitive', 'sleep_habit', 'clean_period', 'shower_timezone'] %}
                 <p>
                     {{ form[category].label(class="form-label") }}
                     <br>
@@ -125,7 +94,7 @@
 
                 </p>
                 {% endfor %}
-               
+                
                 <!--제출-->
                 <br>
                 {{ form.submit(class="btn btn-primary") }}
